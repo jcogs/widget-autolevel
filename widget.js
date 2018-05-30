@@ -189,6 +189,16 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                 }
                 //e.relatedTarget // previous tab
             })
+            
+            // Skill Hoarder: set our probing defaults
+            console.log(this.name + " loading Skill Hoarder default probing values.")
+            $('#com-chilipeppr-widget-autolevel-body .start-x').val(0);
+            $('#com-chilipeppr-widget-autolevel-body .start-y').val(0);
+            $('#com-chilipeppr-widget-autolevel-body .end-x').val(1250);
+            $('#com-chilipeppr-widget-autolevel-body .end-y').val(0);
+            $('#com-chilipeppr-widget-autolevel-body .grid-steps').val(125);
+            $('#com-chilipeppr-widget-autolevel-body .high-z').val(3);
+            $('#com-chilipeppr-widget-autolevel-body .probe-z').val(1.5);
 
             console.log(this.name + " done loading.");
         },
