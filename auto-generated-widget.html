@@ -1390,8 +1390,8 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
 
                 // JC: Move home
                 this.status("Moving to {x:0,y:0}");
-                this.send("G0 f5000 Z" + $("#com-chilipeppr-widget-myautolevel .high-z").val() + "\n"); //raise probe
-                this.send("G0 f5000 X" + 0 + " Y" + 0 + "\n"); //move home
+                this.send("G1 f5000 Z" + $("#com-chilipeppr-widget-myautolevel .high-z").val() + "\n"); //raise probe
+                this.send("G1 f5000 X" + 0 + " Y" + 0 + "\n"); //move home
               
                 // JC: Convert probe data
                 var websocket = new WebSocket("ws://127.0.0.1:6789/");
