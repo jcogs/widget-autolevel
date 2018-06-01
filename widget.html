@@ -34,7 +34,7 @@
 <body>
 
     <!--Put HTML Contents of Widget Here-->
-    <div id="com-chilipeppr-widget-autolevel" class="panel panel-default">
+    <div id="com-chilipeppr-widget-myautolevel" class="panel panel-default">
         <div class="panel-heading">
             <span class="panel-title" data-toggle="popover">Auto-Level <span style="font-size:9px">v2.1</span></span>
 
@@ -62,27 +62,27 @@
 
             <div class="btn-toolbar " role="toolbar" style="padding-top:4px;">
                 <div class="btn-group" style="xmargin-left:0;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
                     data-trigger="hover" data-delay="800">Auto-Fill
                     </button>
-                    <!-- <button type="button" id="com-chilipeppr-widget-autolevel-raycast" class="btn btn-xs btn-default" >Raycast
+                    <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-raycast" class="btn btn-xs btn-default" >Raycast
                 </button> -->
                 </div>
 
                 <div class="btn-group" data-style="padding-right:6px;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
                     disabled="disabled" data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-pause"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
                     </button>
                 </div>
 
                 <div class="btn-group" data-style="padding-right:6px;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span>
                     </button>
                     <button type="button" class="btn btn-xs btn-default dropdown-toggle" style="xpadding:0;" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-zoom-in"></span> <span class="caret"></span>
@@ -90,27 +90,27 @@
                     </button>
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation" class="dropdown-header">Exaggerate Matrix to See Detail Better</li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate1x">1x (None)</a></li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate10x">10x</a></li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate50x">50x (Default)</a></li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate100x">100x</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate1x">1x (None)</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate10x">10x</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate50x">50x (Default)</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate100x">100x</a></li>
 
                     </ul>
                 </div>
 
                 <div class="btn-group" data-style="padding-right:6px;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span>
                     </button>
 
-                    <!-- <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-envelope" >Envelope Gcode
+                    <!-- <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-envelope" >Envelope Gcode
                 </button> -->
                 </div>
 
             </div>
         </div>
-        <div id="com-chilipeppr-widget-autolevel-body" class="panel-body">
+        <div id="com-chilipeppr-widget-myautolevel-body" class="panel-body">
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -126,10 +126,10 @@
 
                     <div class="btn-toolbar" role="toolbar">
                         <div class="btn-group" style="xmargin-top:10px;">
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
                             data-trigger="hover" data-delay="800">Auto-Fill
                             </button>
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-toggleprobearea">Show Region to Probe
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-toggleprobearea">Show Region to Probe
                             </button>
                         </div>
                     </div>
@@ -240,16 +240,16 @@
 
                     <div class="btn-toolbar" role="toolbar">
                         <div class="btn-group" style="xmargin-top:10px;">
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
                             </button>
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
                             disabled="disabled" data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-pause"></span>
                             </button>
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
                             </button>
                         </div>
                         <div class="btn-group" style="xmargin-top:10px;">
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-runtestprobe">Run Test Probe
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-runtestprobe">Run Test Probe
                             </button>
                         </div>
                     </div>
@@ -285,10 +285,10 @@
                             </button>
                             <ul class="xdropdown-menu well">
                                 <li role="presentation" class="dropdown-header">Exaggerate Matrix to See Detail Better</li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate1x">1x (None)</a></li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate10x">10x</a></li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate50x">50x (Default)</a></li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate100x">100x</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate1x">1x (None)</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate10x">10x</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate50x">50x (Default)</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate100x">100x</a></li>
                             </ul>
                         </div>
 
@@ -299,13 +299,13 @@
 
                     <div class="btn-toolbar" role="toolbar" style="xmargin-top:10px;">
                         <!-- <div class="btn-group" style="margin-top:10px;"> -->
-                        <button type="button" class="btn btn-default com-chilipeppr-widget-autolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span> View Probe Data
+                        <button type="button" class="btn btn-default com-chilipeppr-widget-myautolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span> View Probe Data
                         </button>
-                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span> Show Probe Data Matrix
+                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span> Show Probe Data Matrix
                         </button>
-                        <button type="button" class="btn btn-default com-chilipeppr-widget-autolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span> View Auto-Levelled Gcode
+                        <button type="button" class="btn btn-default com-chilipeppr-widget-myautolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span> View Auto-Levelled Gcode
                         </button>
-                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span> Send Auto-Levelled Gcode to Workspace
+                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span> Send Auto-Levelled Gcode to Workspace
                         </button>
                         <!-- </div> -->
                     </div>
@@ -340,18 +340,18 @@
             </div>
             <!-- <textarea class="form-control" rows="3"></textarea> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-pause" class="btn btn-default" style="margin-top:10px;">Pause</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-pause" class="btn btn-default" style="margin-top:10px;">Pause</button> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-autofill" class="btn btn-default" style="margin-top:10px;">Auto Fill</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-autofill" class="btn btn-default" style="margin-top:10px;">Auto Fill</button> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-run" class="btn btn-default" style="margin-top:10px;">Run Probe</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-run" class="btn btn-default" style="margin-top:10px;">Run Probe</button> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-showregion" class="btn btn-default" style="margin-top:10px;">Show Probe Region in 3D Viewer</button> -->
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-hideregion" class="btn btn-default" style="margin-top:10px;">Remove</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-showregion" class="btn btn-default" style="margin-top:10px;">Show Probe Region in 3D Viewer</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-hideregion" class="btn btn-default" style="margin-top:10px;">Remove</button> -->
 
         </div>
-        <div id="com-chilipeppr-widget-autolevel-ftr" class="panel-footer">
-            <textarea id="com-chilipeppr-widget-autolevel-status" class="autolevel-status form-control" rows="3">Click auto-fill, or enter probe area start/end values, or load previous probe data using menus above.</textarea>
+        <div id="com-chilipeppr-widget-myautolevel-ftr" class="panel-footer">
+            <textarea id="com-chilipeppr-widget-myautolevel-status" class="autolevel-status form-control" rows="3">Click auto-fill, or enter probe area start/end values, or load previous probe data using menus above.</textarea>
         </div>
     </div>
 

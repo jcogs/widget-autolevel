@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <title>Widget / Auto-Level</title>
+    <title>Widget / My-Auto-Level</title>
 
     <!-- ChiliPeppr is based on bootstrap CSS. -->
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -17,23 +17,23 @@
 .lastModifyDate {
     color: silver;
 }
-#com-chilipeppr-widget-autolevel .nav-tabs>li>a {
+#com-chilipeppr-widget-myautolevel .nav-tabs>li>a {
     padding: 2px 6px;
 }
 
-#com-chilipeppr-widget-autolevel .btn-group {
+#com-chilipeppr-widget-myautolevel .btn-group {
     margin-left:0;
     margin-right:4px;
 }
-#com-chilipeppr-widget-autolevel-body {
+#com-chilipeppr-widget-myautolevel-body {
     padding:3px;
 }
-#com-chilipeppr-widget-autolevel-body .tab-pane {
+#com-chilipeppr-widget-myautolevel-body .tab-pane {
     padding:10px 16px 20px 16px;
     overflow:auto;
     max-height:170px;
 }
-#com-chilipeppr-widget-autolevel-body .title {
+#com-chilipeppr-widget-myautolevel-body .title {
     width:86px;
     float:left;
     line-height:13px;
@@ -42,13 +42,13 @@
     /* display: table-cell; */
     /* height:100%; */
 }
-#com-chilipeppr-widget-autolevel-body .form-inline {
+#com-chilipeppr-widget-myautolevel-body .form-inline {
     float:left;
 }
 .autoleveltbarbtn {
     float:left;
 }
-#com-chilipeppr-widget-autolevel-body .al-coord {
+#com-chilipeppr-widget-myautolevel-body .al-coord {
     width:65px;
     padding:0 0 0 4px;
 }
@@ -61,12 +61,12 @@
     display: inline-table;
     vertical-align: middle;
 }
-#com-chilipeppr-widget-autolevel-ftr {
+#com-chilipeppr-widget-myautolevel-ftr {
     font-size:11px;
     padding:0;
     margin:0;
 }
-#com-chilipeppr-widget-autolevel-status {
+#com-chilipeppr-widget-myautolevel-status {
     //overflow: auto;
     //max-height:30px;
     background:none;
@@ -118,13 +118,13 @@ console.log(window["_typeface_js"]);
 */
 
 // Test this element. This code is auto-removed by the chilipeppr.load()
-cprequire_test(["inline:com-chilipeppr-widget-autolevel"], function (autolevel) {
+cprequire_test(["inline:com-chilipeppr-widget-myautolevel"], function (autolevel) {
     console.log("test running of " + autolevel.id);
     autolevel.init();
     
-    $('#com-chilipeppr-widget-autolevel').css('margin', '30px');
-    $('#com-chilipeppr-widget-autolevel').css('position', 'relative');
-    $('#com-chilipeppr-widget-autolevel').css('background', 'none');
+    $('#com-chilipeppr-widget-myautolevel').css('margin', '30px');
+    $('#com-chilipeppr-widget-myautolevel').css('position', 'relative');
+    $('#com-chilipeppr-widget-myautolevel').css('background', 'none');
     $('body').prepend('<div id="3dviewer"></div>');
 
     chilipeppr.load(
@@ -136,7 +136,7 @@ cprequire_test(["inline:com-chilipeppr-widget-autolevel"], function (autolevel) 
             threed.init({doMyOwnDragDrop: true});
             $('#com-chilipeppr-widget-3dviewer .panel-heading').addClass('hidden');
             //autolevel.addRegionTo3d();
-            //autolevel.loadFileFromLocalStorageKey('com-chilipeppr-widget-autolevel-recent8');
+            //autolevel.loadFileFromLocalStorageKey('com-chilipeppr-widget-myautolevel-recent8');
             //autolevel.toggleShowMatrix();
         });
     });
@@ -183,20 +183,20 @@ cprequire_test(["inline:com-chilipeppr-widget-autolevel"], function (autolevel) 
     var testFinalData = [];
     
     //autolevel.loadTestData(testFinalData);
-    //autolevel.loadFileFromLocalStorageKey('com-chilipeppr-widget-autolevel-recent6');
+    //autolevel.loadFileFromLocalStorageKey('com-chilipeppr-widget-myautolevel-recent6');
     
 } /*end_test*/ );
 
 
-cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHelvetiker", "Three"], function () {
+cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "ThreeHelvetiker", "Three"], function () {
     
     return {
-        id: "com-chilipeppr-widget-autolevel",
+        id: "com-chilipeppr-widget-myautolevel",
         url: "http://raw.githubusercontent.com/https://master/auto-generated-widget.html",       // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
         fiddleurl: "http://ide.c9.io/undefined/undefined", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
         githuburl: "http://github.com/https:/", // The backing github repo
         testurl: "http://undefined-undefined.c9users.io/widget.html",   // The standalone working widget so can view it working by itself
-        name: "Widget / Auto-Level",
+        name: "Widget / My-Auto-Level",
         desc: "Allows you to auto-level your PCB or other conductive surface before milling. Most raw PCB boards or other surfaces have a slight warpage. This widget lets you probe the warpage and then it auto-scales your Gcode to match the warpage so you get very clean/predictable z-positions in your milling job.",
         publish: {
         },
@@ -213,57 +213,57 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
 
             this.forkSetup();
 
-            $('#com-chilipeppr-widget-autolevel-showregion').click(this.addRegionTo3d.bind(this));
-            $('#com-chilipeppr-widget-autolevel-hideregion').click(this.removeRegionFrom3d.bind(this));
-            $('#com-chilipeppr-widget-autolevel-body .autolevel-elem').blur(this.formUpdate.bind(this));
-            $('.com-chilipeppr-widget-autolevel-autofill').click(this.autoFillData.bind(this));
-            $('.com-chilipeppr-widget-autolevel-run').click(this.startAutoLevel.bind(this));
-            $('.com-chilipeppr-widget-autolevel-stop').click(this.stopAutoLevel.bind(this));
-            $('.com-chilipeppr-widget-autolevel-pause').click(this.pause.bind(this));
+            $('#com-chilipeppr-widget-myautolevel-showregion').click(this.addRegionTo3d.bind(this));
+            $('#com-chilipeppr-widget-myautolevel-hideregion').click(this.removeRegionFrom3d.bind(this));
+            $('#com-chilipeppr-widget-myautolevel-body .autolevel-elem').blur(this.formUpdate.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-autofill').click(this.autoFillData.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-run').click(this.startAutoLevel.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-stop').click(this.stopAutoLevel.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-pause').click(this.pause.bind(this));
             
             // toggleprobearea
-            $('.com-chilipeppr-widget-autolevel-toggleprobearea').click(this.toggleProbeArea.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-toggleprobearea').click(this.toggleProbeArea.bind(this));
             
             // runTestProbe
-            $('.com-chilipeppr-widget-autolevel-runtestprobe').click(this.runTestProbe.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-runtestprobe').click(this.runTestProbe.bind(this));
             
             // gcodesendtows
-            $('.com-chilipeppr-widget-autolevel-gcodesendtows').click(this.sendGcodeToWorkspace.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-gcodesendtows').click(this.sendGcodeToWorkspace.bind(this));
             
             // run this method after modal is dismissed
             //$('#com-chilipeppr-widget-modal-autolevel-start').on('hidden.bs.modal', this.modalComplete.bind(this));
             $('#com-chilipeppr-widget-modal-autolevel-start .btn-autolevel-go').click(this.modalComplete.bind(this));
             
-            $('.com-chilipeppr-widget-autolevel-togglematrix').click( this.toggleShowMatrix.bind(this) );
-            $('.com-chilipeppr-widget-autolevel-viewdata').click( this.showData.bind(this) );
+            $('.com-chilipeppr-widget-myautolevel-togglematrix').click( this.toggleShowMatrix.bind(this) );
+            $('.com-chilipeppr-widget-myautolevel-viewdata').click( this.showData.bind(this) );
             
             // setup del files
-            $('#com-chilipeppr-widget-autolevel .recent-file-delete').click( this.deleteRecentFiles.bind(this));
+            $('#com-chilipeppr-widget-myautolevel .recent-file-delete').click( this.deleteRecentFiles.bind(this));
 
             this.buildRecentFileMenu();
             
             // paste loader
-            $('#com-chilipeppr-widget-autolevel .dropdown-menu .paste-load').click(function(e) {
+            $('#com-chilipeppr-widget-myautolevel .dropdown-menu .paste-load').click(function(e) {
                 e.stopPropagation();
             });
             var that = this;
-            $('#com-chilipeppr-widget-autolevel .dropdown-menu .paste-load-go').click(function(e) {
+            $('#com-chilipeppr-widget-myautolevel .dropdown-menu .paste-load-go').click(function(e) {
                 that.loadText();
             });
             
             // exaggerate detail menu
-            $('.com-chilipeppr-widget-autolevel-exaggerate1x').click(1, this.setExaggerate.bind(this));
-            $('.com-chilipeppr-widget-autolevel-exaggerate10x').click(10, this.setExaggerate.bind(this));
-            $('.com-chilipeppr-widget-autolevel-exaggerate50x').click(50, this.setExaggerate.bind(this));
-            $('.com-chilipeppr-widget-autolevel-exaggerate100x').click(100, this.setExaggerate.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-exaggerate1x').click(1, this.setExaggerate.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-exaggerate10x').click(10, this.setExaggerate.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-exaggerate50x').click(50, this.setExaggerate.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-exaggerate100x').click(100, this.setExaggerate.bind(this));
             
             //$('#autolevel-run .dropdown-toggle').dropdown()
             
             // raycast
-            $('.com-chilipeppr-widget-autolevel-raycast').click(this.rayCast.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-raycast').click(this.rayCast.bind(this));
             // envelope
-            $('.com-chilipeppr-widget-autolevel-envelope').click(this.envelope.bind(this));
-            $('.com-chilipeppr-widget-autolevel-gcodeview').click(this.envelopeView.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-envelope').click(this.envelope.bind(this));
+            $('.com-chilipeppr-widget-myautolevel-gcodeview').click(this.envelopeView.bind(this));
             
             // lazy load tutorial tab youtube vid
             var isVidLoaded = false;
@@ -284,13 +284,13 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             
             // Skill Hoarder: set our probing defaults
             console.log(this.name + " loading Skill Hoarder default probing values.")
-            $('#com-chilipeppr-widget-autolevel-body .start-x').val(0);
-            $('#com-chilipeppr-widget-autolevel-body .start-y').val(0);
-            $('#com-chilipeppr-widget-autolevel-body .end-x').val(1250);
-            $('#com-chilipeppr-widget-autolevel-body .end-y').val(0);
-            $('#com-chilipeppr-widget-autolevel-body .grid-steps').val(125);
-            $('#com-chilipeppr-widget-autolevel-body .high-z').val(3);
-            $('#com-chilipeppr-widget-autolevel-body .probe-z').val(1.5);
+            $('#com-chilipeppr-widget-myautolevel-body .start-x').val(0);
+            $('#com-chilipeppr-widget-myautolevel-body .start-y').val(0);
+            $('#com-chilipeppr-widget-myautolevel-body .end-x').val(1250);
+            $('#com-chilipeppr-widget-myautolevel-body .end-y').val(0);
+            $('#com-chilipeppr-widget-myautolevel-body .grid-steps').val(125);
+            $('#com-chilipeppr-widget-myautolevel-body .high-z').val(3);
+            $('#com-chilipeppr-widget-myautolevel-body .probe-z').val(1.5);
 
             console.log(this.name + " done loading.");
         },
@@ -301,7 +301,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
         },
         loadText: function() {
             console.log("loading probe data from paste");
-            var data = $('#com-chilipeppr-widget-autolevel .dropdown-menu .paste-load').val();
+            var data = $('#com-chilipeppr-widget-myautolevel .dropdown-menu .paste-load').val();
             var name = "Paste: ";
             if (data.length > 20) name += data.substring(0,20);
             else name += data;
@@ -334,7 +334,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             for (var i = 0; i < localStorage.length; i++){
                 console.log("localStorage.item.key:", localStorage.key(i));
                 var key = localStorage.key(i);
-                if (key.match(/com-chilipeppr-widget-autolevel/))
+                if (key.match(/com-chilipeppr-widget-myautolevel/))
                     localStorage.removeItem(key);
                 
             }
@@ -346,7 +346,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             // get the next avail slot
             var lastSlot = -1;
             for(var ctr = 0; ctr < 100; ctr++) {
-                if ('com-chilipeppr-widget-autolevel-recent' + ctr in localStorage) {
+                if ('com-chilipeppr-widget-myautolevel-recent' + ctr in localStorage) {
                     console.log("found recent file entry. ctr:", ctr);
                     lastSlot = ctr;
                 }
@@ -354,12 +354,12 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             console.log("lastSlot we found:", lastSlot);
             
             var nextSlot = lastSlot + 1;
-            var recent = localStorage.getItem("com-chilipeppr-widget-autolevel-recent" + nextSlot);
+            var recent = localStorage.getItem("com-chilipeppr-widget-myautolevel-recent" + nextSlot);
             if (recent == null) {
                 console.log("empty slot. filling.");
-                localStorage.setItem("com-chilipeppr-widget-autolevel-recent" + nextSlot, fileStr);
-                localStorage.setItem("com-chilipeppr-widget-autolevel-recent" + nextSlot + "-name", info.name);
-                localStorage.setItem("com-chilipeppr-widget-autolevel-recent" + nextSlot + "-lastMod", info.lastModified);
+                localStorage.setItem("com-chilipeppr-widget-myautolevel-recent" + nextSlot, fileStr);
+                localStorage.setItem("com-chilipeppr-widget-myautolevel-recent" + nextSlot + "-name", info.name);
+                localStorage.setItem("com-chilipeppr-widget-myautolevel-recent" + nextSlot + "-lastMod", info.lastModified);
                 this.buildRecentFileMenu();
             }
             
@@ -367,17 +367,17 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
         buildRecentFileMenu: function() {
             
             // cleanup prev recent files
-            $('#com-chilipeppr-widget-autolevel .dropdown-menu2 > li.recent-file-item').remove();
+            $('#com-chilipeppr-widget-myautolevel .dropdown-menu2 > li.recent-file-item').remove();
             
-            var li = $('#com-chilipeppr-widget-autolevel .dropdown-menu2 > li.recent-files');
+            var li = $('#com-chilipeppr-widget-myautolevel .dropdown-menu2 > li.recent-files');
             console.log("listItems:", li);
             var ctr = 0;
-            var recentName = localStorage.getItem("com-chilipeppr-widget-autolevel-recent" + ctr + "-name");
+            var recentName = localStorage.getItem("com-chilipeppr-widget-myautolevel-recent" + ctr + "-name");
             while(recentName != null) {
                 console.log("recentFile ctr:", ctr, "recentName:", recentName);
-                var recentLastModified = localStorage.getItem("com-chilipeppr-widget-autolevel-recent" + ctr + "-lastMod");
+                var recentLastModified = localStorage.getItem("com-chilipeppr-widget-myautolevel-recent" + ctr + "-lastMod");
                 var rlm = new Date(recentLastModified);
-                var recentSize = localStorage.getItem("com-chilipeppr-widget-autolevel-recent" + ctr).length;
+                var recentSize = localStorage.getItem("com-chilipeppr-widget-myautolevel-recent" + ctr).length;
                 var rsize = parseInt(recentSize / 1024);
                 if (rsize == 0) rsize = 1;
                 var newLi = $(
@@ -388,7 +388,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                     //' <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-trash"></span></button></a></li>');
                 newLi.insertAfter(li);
                 var that = this;
-                newLi.click("com-chilipeppr-widget-autolevel-recent" + ctr, function(data) {
+                newLi.click("com-chilipeppr-widget-myautolevel-recent" + ctr, function(data) {
                     console.log("got recent file click. data:", data);
                     var key = data.data;
                     that.loadFileFromLocalStorageKey(key);
@@ -396,7 +396,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                 });
 
                 ctr++;
-                recentName = localStorage.getItem("com-chilipeppr-widget-autolevel-recent" + ctr + "-name");
+                recentName = localStorage.getItem("com-chilipeppr-widget-myautolevel-recent" + ctr + "-name");
                 
             }
         },
@@ -430,15 +430,15 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
         matrix: null, // stores our matrix 3d obj
         previousLayerOpacities: [], // store previous opacities that we're overriding
         toggleShowMatrix: function() {
-            if($('.com-chilipeppr-widget-autolevel-togglematrix').hasClass('active')) {
+            if($('.com-chilipeppr-widget-myautolevel-togglematrix').hasClass('active')) {
                 // that means we're showing the matrix, so hide it
                 this.hideProbeMatrix();
-                $('.com-chilipeppr-widget-autolevel-togglematrix').removeClass('active');
+                $('.com-chilipeppr-widget-myautolevel-togglematrix').removeClass('active');
             } else {
                 // show it
                 if (this.probes.length > 0) {
                     this.showProbeMatrix();
-                    $('.com-chilipeppr-widget-autolevel-togglematrix').addClass('active');
+                    $('.com-chilipeppr-widget-myautolevel-togglematrix').addClass('active');
                 } else {
                     this.status("No data to show matrix. Run the probe first.");
                 }
@@ -1202,18 +1202,18 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
         startAutoLevel: function() {
             this.currentStep = null;
             this.isPaused = false;
-            $('.com-chilipeppr-widget-autolevel-run').popover('hide');
-            $('.com-chilipeppr-widget-autolevel-pause').popover('hide');
-            $('.com-chilipeppr-widget-autolevel-run').prop('disabled', true);
-            $('.com-chilipeppr-widget-autolevel-pause').prop('disabled', false);
+            $('.com-chilipeppr-widget-myautolevel-run').popover('hide');
+            $('.com-chilipeppr-widget-myautolevel-pause').popover('hide');
+            $('.com-chilipeppr-widget-myautolevel-run').prop('disabled', true);
+            $('.com-chilipeppr-widget-myautolevel-pause').prop('disabled', false);
             this.genProbeGcode();
         },
         stopAutoLevel: function() {
             this.isPaused = true;
-            $('.com-chilipeppr-widget-autolevel-stop').popover('hide');
-            $('.com-chilipeppr-widget-autolevel-pause').popover('hide');
-            $('.com-chilipeppr-widget-autolevel-run').prop('disabled', false);
-            $('.com-chilipeppr-widget-autolevel-pause').prop('disabled', true);
+            $('.com-chilipeppr-widget-myautolevel-stop').popover('hide');
+            $('.com-chilipeppr-widget-myautolevel-pause').popover('hide');
+            $('.com-chilipeppr-widget-myautolevel-run').prop('disabled', false);
+            $('.com-chilipeppr-widget-myautolevel-pause').prop('disabled', true);
         },
         formUpdate: function() {
             this.calcSteps();
@@ -1335,20 +1335,20 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
         isPaused: false,
         pause: function() {
             // remove popovers
-            $('.com-chilipeppr-widget-autolevel-pause').popover('hide');
+            $('.com-chilipeppr-widget-myautolevel-pause').popover('hide');
             if (this.isPaused) {
                 // unpause
                 console.log("unpausing");
                 this.status("Unpaused");
                 this.isPaused = false;
                 this.doNextStep();
-                $('.com-chilipeppr-widget-autolevel-pause').removeClass('active');
+                $('.com-chilipeppr-widget-myautolevel-pause').removeClass('active');
             } else {
                 // need to pause
                 console.log("pausing...");
                 this.status("Paused");
                 this.isPaused = true;
-                $('.com-chilipeppr-widget-autolevel-pause').addClass('active');
+                $('.com-chilipeppr-widget-myautolevel-pause').addClass('active');
             }
         },
         doNextStep: function() {
@@ -1395,9 +1395,9 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             
             // Jarret Luft's fix
             this.status("Moving to " + pos);
-            this.send("G0 Z" + $("#com-chilipeppr-widget-autolevel .high-z").val() + "\n"); //raise probe
+            this.send("G0 Z" + $("#com-chilipeppr-widget-myautolevel .high-z").val() + "\n"); //raise probe
             this.send("G0 X" + probe.x + " Y" + probe.y + "\n"); //move to next probe point
-            this.send("G0 Z" + $("#com-chilipeppr-widget-autolevel .probe-z").val() + "\n"); //lower probe to starting point
+            this.send("G0 Z" + $("#com-chilipeppr-widget-myautolevel .probe-z").val() + "\n"); //lower probe to starting point
 
             /*
             this.status("Moving to " + pos);
@@ -1538,7 +1538,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
         statEl: null, // cache the status element in DOM
         status: function(txt) {
             console.log("status. txt:", txt);
-            if (this.statEl == null) this.statEl = $('#com-chilipeppr-widget-autolevel-status');
+            if (this.statEl == null) this.statEl = $('#com-chilipeppr-widget-myautolevel-status');
             var len = this.statEl.val().length;
             if (len > 1000) {
                 console.log("truncating auto-level stats");
@@ -1598,7 +1598,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             // read the 3d viewer data and auto-fill the extents
             var b = this.getBbox();
             
-            var stepsevery = $('#com-chilipeppr-widget-autolevel-body .grid-steps').val();
+            var stepsevery = $('#com-chilipeppr-widget-myautolevel-body .grid-steps').val();
             stepsevery = parseFloat(stepsevery);
             
             // Bug fix by Andrew Powell to get gcode that doesn't start at 0,0, i.e. has negative X or Y values in it, to get bounding box auto-fill region to work correctly
@@ -1609,10 +1609,10 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             //var endy = stepsevery * (parseInt((b.box.max.y - b.box.min.y) / stepsevery) + 1);
             
             //bbox.box.min.x
-            $('#com-chilipeppr-widget-autolevel-body .start-x').val(b.box.min.x);
-            $('#com-chilipeppr-widget-autolevel-body .start-y').val(b.box.min.y);
-            $('#com-chilipeppr-widget-autolevel-body .end-x').val(endx);
-            $('#com-chilipeppr-widget-autolevel-body .end-y').val(endy);
+            $('#com-chilipeppr-widget-myautolevel-body .start-x').val(b.box.min.x);
+            $('#com-chilipeppr-widget-myautolevel-body .start-y').val(b.box.min.y);
+            $('#com-chilipeppr-widget-myautolevel-body .end-x').val(endx);
+            $('#com-chilipeppr-widget-myautolevel-body .end-y').val(endy);
             this.formUpdate();
         },
         user3dObject: null,
@@ -1650,11 +1650,11 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
         },
         calcSteps: function() {
             console.log("calcSteps");
-            var startx = $('#com-chilipeppr-widget-autolevel-body .start-x').val();
-            var starty = $('#com-chilipeppr-widget-autolevel-body .start-y').val();
-            var endx = $('#com-chilipeppr-widget-autolevel-body .end-x').val();
-            var endy = $('#com-chilipeppr-widget-autolevel-body .end-y').val();
-            var stepsevery = $('#com-chilipeppr-widget-autolevel-body .grid-steps').val();
+            var startx = $('#com-chilipeppr-widget-myautolevel-body .start-x').val();
+            var starty = $('#com-chilipeppr-widget-myautolevel-body .start-y').val();
+            var endx = $('#com-chilipeppr-widget-myautolevel-body .end-x').val();
+            var endy = $('#com-chilipeppr-widget-myautolevel-body .end-y').val();
+            var stepsevery = $('#com-chilipeppr-widget-myautolevel-body .grid-steps').val();
             startx = parseFloat(startx);
             starty = parseFloat(starty);
             endx = parseFloat(endx);
@@ -1662,20 +1662,20 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             stepsevery = parseFloat(stepsevery);
             var stepsx = (endx - startx) / stepsevery;
             var stepsy = (endy - starty) / stepsevery;
-            $('#com-chilipeppr-widget-autolevel-body .calc-steps').text(
+            $('#com-chilipeppr-widget-myautolevel-body .calc-steps').text(
                 "Steps X: " + stepsx + ", Steps Y: " + stepsy);
             return {stepsevery: stepsevery, startx: startx, starty: starty, 
                     endx: endx, endy: endy, stepsx: stepsx, stepsy: stepsy};
         },
         toggleProbeArea: function() {
-            if($('.com-chilipeppr-widget-autolevel-toggleprobearea').hasClass('active')) {
+            if($('.com-chilipeppr-widget-myautolevel-toggleprobearea').hasClass('active')) {
                 // that means we're showing the region, so hide it
                 this.removeRegionFrom3d();
-                $('.com-chilipeppr-widget-autolevel-toggleprobearea').removeClass('active');
+                $('.com-chilipeppr-widget-myautolevel-toggleprobearea').removeClass('active');
             } else {
                 // show it
                 this.addRegionTo3d();
-                $('.com-chilipeppr-widget-autolevel-toggleprobearea').addClass('active');
+                $('.com-chilipeppr-widget-myautolevel-toggleprobearea').addClass('active');
             }
 
         },
@@ -1690,7 +1690,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                 this.removeRegionFrom3d();
             }
 
-            $('.com-chilipeppr-widget-autolevel-toggleprobearea').addClass('active');
+            $('.com-chilipeppr-widget-myautolevel-toggleprobearea').addClass('active');
             
             // get bounding box of user data in 3d viewer
             this.getBbox();
@@ -2082,7 +2082,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
 <body>
 
     <!--Put HTML Contents of Widget Here-->
-    <div id="com-chilipeppr-widget-autolevel" class="panel panel-default">
+    <div id="com-chilipeppr-widget-myautolevel" class="panel panel-default">
         <div class="panel-heading">
             <span class="panel-title" data-toggle="popover">Auto-Level <span style="font-size:9px">v2.1</span></span>
 
@@ -2110,27 +2110,27 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
 
             <div class="btn-toolbar " role="toolbar" style="padding-top:4px;">
                 <div class="btn-group" style="xmargin-left:0;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
                     data-trigger="hover" data-delay="800">Auto-Fill
                     </button>
-                    <!-- <button type="button" id="com-chilipeppr-widget-autolevel-raycast" class="btn btn-xs btn-default" >Raycast
+                    <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-raycast" class="btn btn-xs btn-default" >Raycast
                 </button> -->
                 </div>
 
                 <div class="btn-group" data-style="padding-right:6px;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
                     disabled="disabled" data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-pause"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
                     </button>
                 </div>
 
                 <div class="btn-group" data-style="padding-right:6px;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span>
                     </button>
                     <button type="button" class="btn btn-xs btn-default dropdown-toggle" style="xpadding:0;" data-toggle="dropdown">
                         <span class="glyphicon glyphicon-zoom-in"></span> <span class="caret"></span>
@@ -2138,27 +2138,27 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                     </button>
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation" class="dropdown-header">Exaggerate Matrix to See Detail Better</li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate1x">1x (None)</a></li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate10x">10x</a></li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate50x">50x (Default)</a></li>
-                        <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate100x">100x</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate1x">1x (None)</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate10x">10x</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate50x">50x (Default)</a></li>
+                        <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate100x">100x</a></li>
 
                     </ul>
                 </div>
 
                 <div class="btn-group" data-style="padding-right:6px;">
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span>
                     </button>
-                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span>
+                    <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span>
                     </button>
 
-                    <!-- <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-autolevel-envelope" >Envelope Gcode
+                    <!-- <button type="button" id="" class="btn btn-xs btn-default com-chilipeppr-widget-myautolevel-envelope" >Envelope Gcode
                 </button> -->
                 </div>
 
             </div>
         </div>
-        <div id="com-chilipeppr-widget-autolevel-body" class="panel-body">
+        <div id="com-chilipeppr-widget-myautolevel-body" class="panel-body">
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -2174,10 +2174,10 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
 
                     <div class="btn-toolbar" role="toolbar">
                         <div class="btn-group" style="xmargin-top:10px;">
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-autofill" data-container="body" data-toggle="popover" data-placement="auto" data-content="Auto-fill the Start At and End At positions based on the extent of your Gcode objects in the 3D Viewer"
                             data-trigger="hover" data-delay="800">Auto-Fill
                             </button>
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-toggleprobearea">Show Region to Probe
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-toggleprobearea">Show Region to Probe
                             </button>
                         </div>
                     </div>
@@ -2288,16 +2288,16 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
 
                     <div class="btn-toolbar" role="toolbar">
                         <div class="btn-group" style="xmargin-top:10px;">
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-run" data-container="body" data-toggle="popover" data-placement="auto" data-content="Run the probing process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-play"></span>
                             </button>
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-pause" data-container="body" data-toggle="popover" data-placement="auto" data-content="Pause the probing process. If in the middle of a Z Homing pause will only occur at end."
                             disabled="disabled" data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-pause"></span>
                             </button>
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-stop" data-container="body" data-toggle="popover" data-placement="auto" data-content="Stop the probe process." data-trigger="hover" data-delay="800"> <span class="glyphicon glyphicon-stop"></span>
                             </button>
                         </div>
                         <div class="btn-group" style="xmargin-top:10px;">
-                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-runtestprobe">Run Test Probe
+                            <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-runtestprobe">Run Test Probe
                             </button>
                         </div>
                     </div>
@@ -2333,10 +2333,10 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                             </button>
                             <ul class="xdropdown-menu well">
                                 <li role="presentation" class="dropdown-header">Exaggerate Matrix to See Detail Better</li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate1x">1x (None)</a></li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate10x">10x</a></li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate50x">50x (Default)</a></li>
-                                <li><a href="javascript:" class="com-chilipeppr-widget-autolevel-exaggerate100x">100x</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate1x">1x (None)</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate10x">10x</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate50x">50x (Default)</a></li>
+                                <li><a href="javascript:" class="com-chilipeppr-widget-myautolevel-exaggerate100x">100x</a></li>
                             </ul>
                         </div>
 
@@ -2347,13 +2347,13 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
 
                     <div class="btn-toolbar" role="toolbar" style="xmargin-top:10px;">
                         <!-- <div class="btn-group" style="margin-top:10px;"> -->
-                        <button type="button" class="btn btn-default com-chilipeppr-widget-autolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span> View Probe Data
+                        <button type="button" class="btn btn-default com-chilipeppr-widget-myautolevel-viewdata"><span class="glyphicon glyphicon-list-alt"></span><span class="glyphicon glyphicon-pushpin" style="margin-left:-2px;color:#666666;"></span> View Probe Data
                         </button>
-                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span> Show Probe Data Matrix
+                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-togglematrix"><span class="glyphicon glyphicon-th-large"></span> Show Probe Data Matrix
                         </button>
-                        <button type="button" class="btn btn-default com-chilipeppr-widget-autolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span> View Auto-Levelled Gcode
+                        <button type="button" class="btn btn-default com-chilipeppr-widget-myautolevel-gcodeview"><span class="glyphicon glyphicon glyphicon-tasks"></span> View Auto-Levelled Gcode
                         </button>
-                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-autolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span> Send Auto-Levelled Gcode to Workspace
+                        <button type="button" id="" class="btn btn-default com-chilipeppr-widget-myautolevel-gcodesendtows"><span class="glyphicon glyphicon-file"></span><span class="glyphicon glyphicon-share-alt" style="margin-left:-4px;color:#666666;"></span> Send Auto-Levelled Gcode to Workspace
                         </button>
                         <!-- </div> -->
                     </div>
@@ -2388,18 +2388,18 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             </div>
             <!-- <textarea class="form-control" rows="3"></textarea> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-pause" class="btn btn-default" style="margin-top:10px;">Pause</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-pause" class="btn btn-default" style="margin-top:10px;">Pause</button> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-autofill" class="btn btn-default" style="margin-top:10px;">Auto Fill</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-autofill" class="btn btn-default" style="margin-top:10px;">Auto Fill</button> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-run" class="btn btn-default" style="margin-top:10px;">Run Probe</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-run" class="btn btn-default" style="margin-top:10px;">Run Probe</button> -->
 
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-showregion" class="btn btn-default" style="margin-top:10px;">Show Probe Region in 3D Viewer</button> -->
-            <!-- <button type="button" id="com-chilipeppr-widget-autolevel-hideregion" class="btn btn-default" style="margin-top:10px;">Remove</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-showregion" class="btn btn-default" style="margin-top:10px;">Show Probe Region in 3D Viewer</button> -->
+            <!-- <button type="button" id="com-chilipeppr-widget-myautolevel-hideregion" class="btn btn-default" style="margin-top:10px;">Remove</button> -->
 
         </div>
-        <div id="com-chilipeppr-widget-autolevel-ftr" class="panel-footer">
-            <textarea id="com-chilipeppr-widget-autolevel-status" class="autolevel-status form-control" rows="3">Click auto-fill, or enter probe area start/end values, or load previous probe data using menus above.</textarea>
+        <div id="com-chilipeppr-widget-myautolevel-ftr" class="panel-footer">
+            <textarea id="com-chilipeppr-widget-myautolevel-status" class="autolevel-status form-control" rows="3">Click auto-fill, or enter probe area start/end values, or load previous probe data using menus above.</textarea>
         </div>
     </div>
 
