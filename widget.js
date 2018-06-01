@@ -122,8 +122,6 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
             this.forkSetup();
 
             // JC
-            while(true)
-              console.log("hiiii");
             console.log("setting event handlers for buttons")
             $('#com-chilipeppr-widget-myautolevel-showregion').click(this.addRegionTo3d.bind(this));
             $('#com-chilipeppr-widget-myautolevel-hideregion').click(this.removeRegionFrom3d.bind(this));
