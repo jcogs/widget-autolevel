@@ -1295,6 +1295,22 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
 
                 // spit out debug
                 console.log("Final JSON data.", JSON.stringify(this.probes));
+
+                // JC: Move home
+                this.status("Moving to {x:0,y:0}");
+                this.send("G0 f5000 Z" + $("#com-chilipeppr-widget-myautolevel .high-z").val() + "\n"); //raise probe
+                this.send("G0 f5000 X" + 0 + " Y" + 0 + "\n"); //move home
+              
+                // JC: Convert probe data
+                var websocket = new WebSocket("ws://127.0.0.1:6789/");
+                websocket.onopen = function() {
+                    websocket.send(JSON.stringify(this.probes));
+                };
+                websocket.onmessage = function (event) {
+                    //var data = JSON.parse(event.data);
+                    $('#com-chilipeppr-widget-myautolevel .dropdown-menu .paste-load').val(event.data);
+                    loadText(); // mimic the behavior of pasting probe data
+                };
                 return;
             }
             
