@@ -121,6 +121,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
 
             this.forkSetup();
 
+            console.log("setting event handlers for buttons")
             $('#com-chilipeppr-widget-myautolevel-showregion').click(this.addRegionTo3d.bind(this));
             $('#com-chilipeppr-widget-myautolevel-hideregion').click(this.removeRegionFrom3d.bind(this));
             $('#com-chilipeppr-widget-myautolevel-body .myautolevel-elem').blur(this.formUpdate.bind(this));
@@ -1108,6 +1109,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
             this.send("G38.2 Z-10 F" + probeFeedRate + "\n");
         },
         startmyautolevel: function() {
+            console.log("begin 'startmyautolevel()'");
             this.currentStep = null;
             this.isPaused = false;
             $('.com-chilipeppr-widget-myautolevel-run').popover('hide');
@@ -1115,6 +1117,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
             $('.com-chilipeppr-widget-myautolevel-run').prop('disabled', true);
             $('.com-chilipeppr-widget-myautolevel-pause').prop('disabled', false);
             this.genProbeGcode();
+            console.log("end 'startmyautolevel()'");
         },
         stopmyautolevel: function() {
             this.isPaused = true;
@@ -1133,10 +1136,12 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
         maxx: null,
         maxy: null,
         genProbeGcode: function() {
+            console.log("begin 'genProbeGcode()'");
             this.addRegionTo3d();
             this.status("Starting probe process");
             this.modalStart();
             // will go to modalComplete() after this if user hits "go"
+            console.log("end 'genProbeGcode()'");
         },
         //go: false, // this is set by modal to true if they said "go"
         modalComplete: function() {
