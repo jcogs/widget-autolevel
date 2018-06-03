@@ -1319,7 +1319,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
                 websocket.onmessage = function (event) {
                     //var data = JSON.parse(event.data);
                     $('#com-chilipeppr-widget-myautolevel .dropdown-menu .paste-load').val(event.data);
-                    loadText(); // mimic the behavior of pasting probe data
+                    that.loadText(); // mimic the behavior of pasting probe data
                 };
                 return;
             }
