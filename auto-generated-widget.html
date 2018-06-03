@@ -623,7 +623,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
             console.error("gcode:", gcode.userData.lines);
 
             // JC: WARNING! Assuming gcode is in mm because we always use mm for grooving!
-            console.warning("ASSUMING G21");
+            console.warn("ASSUMING G21");
             var newgcode = ["G21"];
             
             // unfade so we can see results
