@@ -1402,10 +1402,11 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
                 this.send("G1 f5000 X" + 0 + " Y" + 0 + "\n"); //move home
               
                 // JC: Convert probe data
+                var that = this;
                 var websocket = new WebSocket("ws://127.0.0.1:6789/");
                 websocket.onopen = function() {
-                    console.error(JSON.stringify(this.probes, null, " "));
-                    websocket.send(JSON.stringify(this.probes, null, " "));
+                    console.error(JSON.stringify(that.probes, null, " "));
+                    websocket.send(JSON.stringify(that.probes, null, " "));
                 };
                 websocket.onmessage = function (event) {
                     //var data = JSON.parse(event.data);
