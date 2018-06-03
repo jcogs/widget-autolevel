@@ -528,7 +528,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
                 this.get3dObjectFrom3dViewer();
                 gcode = this.user3dObject;
             }
-            console.log("gcode:", gcode);
+            console.error("gcode:", gcode);
 
             var newgcode = [];
             
@@ -644,6 +644,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
             console.log("did user want z added to all G cmds", options.addZToAllGCmds, "ctrGCmd:", ctrGCmd, "ctrGCmdNotValid:", ctrGCmdNotValid, "ctrGCmdRayIntersected:", ctrGCmdRayIntersected);
             console.log("ctr:", ctr, "len of newgcode arr (should be same as ctr):", newgcode.length);
             
+            console.error(newgcode);
             this.myautolevelledGcode = newgcode;
             return this.myautolevelledGcode;
         },
@@ -1320,6 +1321,7 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
                     //var data = JSON.parse(event.data);
                     $('#com-chilipeppr-widget-myautolevel .dropdown-menu .paste-load').val(event.data);
                     that.loadText(); // mimic the behavior of pasting probe data
+                    that.sendGcodeToWorkspace();
                 };
                 return;
             }
