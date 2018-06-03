@@ -620,9 +620,11 @@ cpdefine("inline:com-chilipeppr-widget-myautolevel", ["chilipeppr_ready", "Three
                 this.get3dObjectFrom3dViewer();
                 gcode = this.user3dObject;
             }
-            console.error("gcode:", gcode);
+            console.error("gcode:", gcode.userData.lines);
 
-            var newgcode = [];
+            // JC: WARNING! Assuming gcode is in mm because we always use mm for grooving!
+            console.warning("ASSUMING G21");
+            var newgcode = ["G21"];
             
             // unfade so we can see results
             //this.unfadeOutUserObject();
